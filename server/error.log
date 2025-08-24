@@ -1,0 +1,31 @@
+http://localhost:8080/api/challengeAnswer
+Array
+(
+    [dataPack] => {"gameMode":"tic","topicId":"3","courseId":4}
+    [answers] => 
+    [id] => Array
+        (
+            [0] => 4
+        )
+
+    [questionType] => Array
+        (
+            [0] => fillblank
+        )
+
+)
+Array
+(
+    [dataPack] => {"gameMode":"tic","topicId":"3","courseId":4}
+    [answers] => could
+    [id] => Array
+        (
+            [0] => 2
+        )
+
+    [questionType] => Array
+        (
+            [0] => fillblank
+        )
+
+)

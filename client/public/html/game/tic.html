@@ -1,0 +1,83 @@
+<div class="text-center pb-0 pt-0 pb-md-3 pt-md-3"id="box">
+    <header>
+      <h4 class="ticTitle mb-0 mb-md-1">Tic Tac Toe</h4>
+    </header>
+  <div id="ticMessage" class="mb-0 mb-md-2"></div>
+    <ul id="gameBoard" class="mb-0 mb-md-3"></ul>
+    <table class='table table-sm symbolTable'>
+      <thead>
+        <tr><th>Player</th><th>Symbol</th></tr>
+      </thead>
+      <tbody id="playerSymbols"></tbody>
+    </table>
+  <div class="clearfix"></div>
+</div>
+
+  <style>
+.ticTitle{
+  text-align: center;
+  color: #fff;
+}
+.clearfix{
+  clear: both;
+}
+#box{
+  width: 95%;
+  overflow: auto;
+  background: #666;
+  border-radius: 10px;
+}
+#ticMessage{
+  color: #fff;
+}
+#gameBoard{
+  padding-left: 0rem;
+  height: 30vh;
+}
+#gameBoard li{
+  float: left;
+  margin: 0.1%;
+  font-size: 50px;
+  background: #333;
+  color: #ccc;
+  list-style: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5%;
+}
+#gameBoard li:hover, #reset:hover{
+  cursor: pointer;
+  background: #000;
+}
+#reset{
+  border: 0;
+  background: #444;
+  color: #fff;
+  width: 70%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+footer{
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.symbolTable{
+  color: white;
+}
+
+@media only screen and (max-width: 992px){
+	.symbolTable{
+		margin-bottom: 0rem;
+	}
+
+  #gameBoard{
+    height: 25vh;
+  }
+}
+</style>
+

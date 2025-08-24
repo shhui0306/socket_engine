@@ -1,0 +1,203 @@
+<div class="container-fluid pt-4 pb-4">
+	<div class="row">
+		<div class="col-6 text-center">
+			<h4 class="myName">You</h4>
+			<h4 class="myScore">0</h4>
+		</div>
+		<div class="col-6 text-center">
+			<h4 class="oppName">Opponent</h4>
+			<h4 class="oppScore">0</h4>
+		</div>
+		<div class="col-12 text-center">
+			<h5 class="winPointsMessage">Points to win: <span class="winPoints"></span></h5>
+		</div>
+	</div>
+	<div class="arena">
+		<div id="resulttext"></div>
+		<img class="fireworks" style="display: none;">
+		<div id="animation_stage">
+		<div id="animation_container" >
+			<!-- <div class="playerarrow"></div> -->
+			<canvas id="canvas"></canvas>
+			<div id="dom_overlay_container" >
+			</div>
+		</div>
+		<div id="animation_container2">
+			<canvas id="canvas2"></canvas>
+			<div id="dom_overlay_container2">
+			</div>
+		</div>
+		<div id="ringline"></div>
+		</div>
+	</div>
+</div>
+
+<style>
+#animation_container, #animation_container2{
+	background-color:rgba(255, 255, 255, 0.00);
+	 width: 20%;
+	 display: inline-block;
+}
+#canvas, #canvas2{
+	position: absolute;
+	display: block;
+	background-color:rgba(255, 255, 255, 0.00);
+	width: 20%;
+}
+
+#canvas{
+	left: 7%;
+}
+
+#canvas2{
+	right: 7%;
+}
+
+#dom_overlay_container, #dom_overlay_container2{
+	pointer-events:none; 
+	overflow:hidden; 
+	width: 20%; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	display: block;
+}
+
+#animation_stage{
+	width: 100%;
+	height: 250px;
+}
+
+#ringline{
+	width: 90%;
+    color: indianred;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 12%;
+}
+
+.arena{
+	background-image: url(../../images/bull/arena.png);
+    background-position: center;
+    background-size: 900px;
+}
+
+#animation_stage{
+	 width: 100%;
+    height: 15%;
+    display: inline-block;
+    bottom: 30%;
+    left: 0%;
+    position: absolute;
+    z-index: 2;
+}
+
+#canvas #canvas2{
+	width: 20%;
+	height: auto;
+}
+
+#canvas2{
+	display: inline-block;
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+
+
+#ringline{
+	color: indianred;
+    border-width: 2px;
+    border-style: solid;
+    bottom: 100%;
+    left: 8%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    width: 84%;
+    height: 140%;
+    z-index: -1;
+}
+
+.resulttext_win, .resulttext_lose, .resulttext_draw{
+	position: absolute;
+    font-size: 80px;
+    text-align: center;
+    font-weight: 700;
+	-webkit-text-stroke: 2px black;
+	left: 0%;
+    right: 0%;
+    z-index: 3;
+}
+
+.resulttext_win::after{
+	content: "WIN!";
+	color: #f1ee1c
+}
+
+.resulttext_lose::after{
+	content: "LOSE";
+	color: #f14d4d
+}
+
+.resulttext_draw::after{
+	content: "DRAW";
+	color: #34eb53
+}
+
+.fireworks{
+	width: 32%;
+    position: absolute;
+    bottom: 25%;
+}
+
+.playerarrow{
+	font-size: 80px;
+    position: absolute;
+    bottom: 0%;
+    left: 15%;
+	color: red;
+	/* display: none; */
+	font-family: monospace;
+	
+}
+
+.playerarrow::after{
+	content: "▼";
+}
+
+.myName, .oppName{
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.myScore, .oppScore{
+	font-size: 2rem;
+    font-weight: 400;
+}
+
+.winPointsMessage{
+	font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* large screen only */
+@media only screen and (min-width: 992px){
+	.arena{
+		min-height: 300px;
+		max-height: 35vh;
+	}
+}
+
+/* small screen only */
+@media only screen and (max-width: 992px){
+	.arena{
+		height: 25vh;
+	}
+}
+
+</style>
+
